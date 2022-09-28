@@ -2,34 +2,70 @@ import {
   Box,
   Flex,
   HStack,
-  Link,
   IconButton,
   useDisclosure,
-//   useColorModeValue,
-  Stack,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
   Image,
+  VStack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import SocialLinks from './SocialLinks';
 import LogUserLinks from './LogUserLinks';
 import NavList from './NavList';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import {BiHomeCircle,BiFoodMenu} from "react-icons/bi"
+import {GiMeal,GiHotMeal,GiArtilleryShell} from "react-icons/gi";
+import {MdOutlineAddReaction,MdLiveHelp} from "react-icons/md"
+import {VscFileSymlinkDirectory} from "react-icons/vsc"
 
-// const Links = ['Dashboard', 'Projects', 'Team'];
 
-// const NavLink = ({ children }: { children: ReactNode }) => (
-//   <Link
-//     px={2}
-//     py={1}
-//     rounded={'md'}
-//     _hover={{
-//       textDecoration: 'none',
-//       bg: useColorModeValue('gray.200', 'gray.700'),
-//     }}
-//     href={'#'}>
-//     {children}
-//   </Link>
-// );
+const links = [
+  {
+    to: "/",
+    title: "Home",
+    icon: <BiHomeCircle/>
+  },
+  {
+    to: "/meals",
+    title: "Meal Deals",
+    icon: <GiMeal />
+  },
+  {
+    to: "/moments",
+    title: "KindMoments",
+    icon:<MdOutlineAddReaction />
+  },
+  {
+    to: "/picks",
+    title: "Hot Picks",
+    icon: <GiHotMeal />
+  },
+  {
+      to: "/recipe",
+      title: "Recipes",
+      icon: <BiFoodMenu />
+  },
+  {
+      to: "/directory",
+      title: "Directory",
+      icon: <VscFileSymlinkDirectory />
+  },
+  {
+      to: "/aticles",
+      title: "Articles",
+      icon: <GiArtilleryShell />
+  },
+  {
+      to: "/help",
+      title: "Help",
+      icon: <MdLiveHelp />
+  }
+];
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -46,7 +82,7 @@ export default function Navbar() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack  alignItems={'center'}>
-            <Box w={{base:"8rem",sm:"10rem", md:"20rem"}} border="1px solid red"><Image src="https://www.kindmeal.my/images/logo-kindmeal.png"  alt="kinmealLogo" /></Box>
+            <Box w={{base:"8rem",sm:"10rem", md:"20rem"}}><Image src="https://www.kindmeal.my/images/logo-kindmeal.png"  alt="kinmealLogo" /></Box>
             {/* importing component for social links here */}
             {/*  */}
           </HStack>
@@ -76,38 +112,42 @@ export default function Navbar() {
             </Menu> */}
           {/* </Flex> */}
         </Flex>
+        
 
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            {/* <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </Stack> */}
-            <Stack as={'nav'} spacing={4}>
-          <Link href={'#'}>Home</Link>
-          <Link href={'#'}>About</Link>
-          <Link href={'#'}>Blog</Link>
-          <Link href={'#'}>Contact</Link>
-        </Stack>
-          </Box>
+          <Drawer placement='left' onClose={onClose} isOpen={isOpen}>
+          <DrawerOverlay />
+          <DrawerContent>
+          <DrawerCloseButton />
+            <DrawerHeader borderBottomWidth='1px'>
+              <HStack alignItems={'center'} >
+              <Box w="6rem"><Image src="https://www.kindmeal.my/images/logo-kindmeal.png"  alt="kinmealLogo" /></Box>
+            <LogUserLinks />
+              </HStack>
+              </DrawerHeader>
+            <DrawerBody h="10rem">
+              <VStack  align={'flex-start'}>
+            {links.map((item) => (
+        // activeStyle, or activeClass
+        <HStack
+          key={item.title}
+        >
+          {item.icon}
+        <NavLink
+          to={item.to}
+        >
+          {item.title}
+        </NavLink>
+        </HStack>
+      ))}
+      </VStack>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
         ) : null}
       </Box>
       <NavList />
       <Box
-    //   {/*
-    // w={{base:"15rem",sm:"15rem",md:"100%"}} 
-    //   bg={useColorModeValue('gray.50', 'gray.900')}
-    //   color={useColorModeValue('gray.700', 'gray.200')} */}
-      
-    //   {/* <Container */}
-        // as={Box}
-        // maxW={'10xl'}
-        // py={4}
-        // direction={{ base: 'column', md: 'row' }}
-        // spacing={4}
-        
-        // align={{ base: 'center', md: 'center' }}
         >
         
     </Box>

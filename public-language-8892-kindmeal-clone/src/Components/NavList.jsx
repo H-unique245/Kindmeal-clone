@@ -8,7 +8,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 //'Meal Deals','KindMoments','Hot Picks','Recipes','Directory','Articles','Help'       
 
@@ -47,13 +47,22 @@ const links = [
     }
   ];
   const baseStyle = {
-    color: "black",
-    textDecoration: "none"
+    color: "White",
+    fontSize:"18px",
+    fontWeight:"400",
+    lineHeight:"40px",
+    textDecoration: "none",
+    // padding:"10px",
   };
   
   const activeStyle = {
+    color: "White",
+    fontSize:"18px",
+    fontWeight:"400",
+    lineHeight:"40px",
     backgroundColor: "green",
-    textDecoration: "none"
+    textDecoration: "none",
+    // padding:"10px"
   };
   
 // const NavLink = ({ children,to }) => (
@@ -75,8 +84,8 @@ export default function NavList() {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+      <Box bg={useColorModeValue('green.400', 'green.500')} px={4}>
+        <Flex h={12} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -84,10 +93,15 @@ export default function NavList() {
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={'center'}>
+          <HStack  spacing={{sm:7,md:9,lg:14}} ml={{lg:"10%"}} justifyContent={'center'} alignItems={'center'}>
             <HStack
               as={'nav'}
-              spacing={4}
+              maxW={{md:'5xl',lg:'6xl'}}
+              px={15}
+              justifyContent={'space-evenly'}
+              alignItems={'center'}
+            //   ml={40}
+              spacing={{sm:10,md:12,lg:20}}
               display={{ base: 'none', md: 'flex' }}>
               {links.map((item) => (
         // activeStyle, or activeClass
