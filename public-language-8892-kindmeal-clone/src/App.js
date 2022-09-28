@@ -1,10 +1,16 @@
 import './App.css';
+import Footer from './Components/Footer';
+import Navbar from './Components/Navbar';
+import AllRoutes from './Routes/AllRoutes';
 
 function App() {
   return (
     <div className="App">
-      <h1>Kind Meal clone </h1>
+      <Navbar />
+      <AllRoutes />
       <h2>HOME PAGE </h2>
+      <Footer />
+      
     </div>
   );
 }
