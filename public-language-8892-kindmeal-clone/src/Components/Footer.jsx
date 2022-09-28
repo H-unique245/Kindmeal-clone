@@ -43,7 +43,7 @@ export const theme = extendTheme({
         bg={useColorModeValue('green.400', 'green.900')}
         color={useColorModeValue('white')}>
         <Container as={Stack} maxW={'6xl'} px={40} py={10}>
-          <SimpleGrid columns={{ base: 1, sm: 2, md: 5 }} spacing={8}>
+          <SimpleGrid columns={{ base: 1, sm: 3, md: 5 }} spacing={8}>
             <Stack align={'flex-start'}>
               <ListHeader>General</ListHeader>
               <List href={'#'}>Overview</List>
