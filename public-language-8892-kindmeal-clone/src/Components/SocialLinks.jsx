@@ -21,7 +21,7 @@ import { Link } from 'react-router-dom';
           spacing={4}
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}>
-          <Stack direction={{ base: 'column', sm: 'row' }} width={{sm:"80%", md:"100%"}} m={{sm:2}}border="1px solid red" spacing={{sm:2,md:4,lg:6}}>
+          <Stack direction={{ base: 'column', sm: 'row' }} width={{sm:"80%", md:"100%"}} m={{sm:2}} spacing={{sm:2,md:4,lg:6}}>
             <Box color="white" rounded='full'  p={1.5} bg={useColorModeValue('gray.400', 'grey.700')}><Link  to={'https://www.kindmeal.my/widget.htm'} >
               <FaLink size={25}  />
             </Link></Box>
