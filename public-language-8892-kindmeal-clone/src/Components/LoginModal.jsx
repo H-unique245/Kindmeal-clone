@@ -20,10 +20,13 @@ import {
   } from "@chakra-ui/react";
 import { useState } from "react";
   import {RiFacebookCircleLine} from "react-icons/ri"
+import { SignUpModal } from "./SignUpModal";
   
   export function LoginModal({ isModalVisible, setIsModalVisible }) {
     // const { isOpen, onOpen, onClose } = useDisclosure();
     const [logUser,setLogUser] = useState({email:"", password:""})
+  const [isSignModalVisible, setIsSignModalVisible] = useState(false);
+
   const handleChange=(e)=>{
     const {name,value}= e.target;
 
@@ -36,6 +39,12 @@ import { useState } from "react";
     const onClose = () => {
       setIsModalVisible(false);
     };
+
+
+    const SignModalClick=()=>{
+      setIsSignModalVisible(true);
+      // onClose();
+      }
     return (
       <>
         <Modal isOpen={isModalVisible} size="lg"  onClose={onClose}  >
@@ -104,7 +113,14 @@ import { useState } from "react";
                 <Box><Link>Forgot Password ?</Link></Box>
                 <Spacer/>
                 <Spacer/>
-                <Box><Link>Not a member? Sign Up Free!!</Link></Box>
+                <Box onClick={SignModalClick} ><Link>Not a member? Sign Up Free!!</Link>
+                {isSignModalVisible && (
+            <SignUpModal
+              isSignModalVisible={isSignModalVisible}
+              setIsSignModalVisible={setIsSignModalVisible}
+            />
+          )}
+                </Box>
               </HStack>
               </Stack>
           </ModalContent>
