@@ -1,31 +1,32 @@
 import React from 'react'
 
-import { Box, Flex, Heading, Link, Text,  List,
-  ListItem,
-  OrderedList,
-  UnorderedList,
+import { Box,  Heading, Text, ListItem,  UnorderedList,
   Image,
   VStack,
   HStack, } from "@chakra-ui/react";
 import FoodLoverForm from '../Components/FoodLoverForm';
+import { Link } from 'react-router-dom';
 
 function ShopOwner() {
   return (
     
     <HStack justifyContent="space-evenly">
       Sign up form for shop Owner
-      <Box padding={15}>
-        <VStack>
-        <Image src="https://www.kindmeal.my/images/join_normal.png" alt="lover" />
-        <Text>Food Lover Sign Up</Text>
+      <Box padding={15} pt={0} mt={-250} ml={5} >
+      <Link to= "/join"><VStack boxShadow="dark-lg" rounded="xl" height="max-content" m={6} p={4} py={6} >
+         <Image src="https://www.kindmeal.my/images/join_normal.png" alt="lover" />
+        <Text _hover={{textDecoration:"underline"}} >Food Lover Sign Up</Text>
       </VStack>
-      <VStack>
+        </Link>
+      <Link to="/joinshop" >
+      <VStack boxShadow="dark-lg" rounded="xl" height="max-content" m={6} p={4} py={6} border="1px solid gray"  bgColor="blackAlpha.100">
         <Image src="https://www.kindmeal.my/images/join_shop.png" alt="lover" />
-        <Text>Restaurant Sign Up</Text>
+        <Text _hover={{textDecoration:"underline"}}> Restaurant Sign Up</Text>
       </VStack>
-      <VStack>
+      </Link>
+      <VStack boxShadow="dark-lg" rounded="xl" height="max-content" m={6} p={4} py={6} >
         <Heading>Why KindMeal?</Heading>
-        <UnorderedList textAlign='left' margin='20px 0 20px 150px' border="1px solid red" >
+        <UnorderedList textAlign='left' margin='20px 0 20px 150px' w="70%" >
                       <ListItem>Exclusive meat-free deals</ListItem>
                       <ListItem>Share yummy food moments</ListItem>
                       <ListItem>Meet friendly food lovers</ListItem>
@@ -34,6 +35,7 @@ function ShopOwner() {
                       <ListItem>Instant coupons & dining</ListItem>
                       <ListItem>No upfront payment, booking or printing</ListItem>
                   </UnorderedList>
+                  <Text _hover={{textDecoration:"underline", cursor:"pointer"}}> More about KindMeal » </Text>
       </VStack>
       </Box>
       <Box w='60%' margin='0 auto' p='5' textAlign='left'>
