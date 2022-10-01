@@ -82,35 +82,16 @@ export default function Navbar() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack  alignItems={'center'}>
-            <Box w={{base:"8rem",sm:"10rem", md:"20rem"}}><Image src="https://www.kindmeal.my/images/logo-kindmeal.png"  alt="kinmealLogo" /></Box>
+            <Box w={{base:"8rem",sm:"10rem", md:"20rem"}}>
+              <NavLink to="/">
+              <Image src="https://www.kindmeal.my/images/logo-kindmeal.png"  alt="kinmealLogo" />
+              </NavLink>
+              </Box>
+          </HStack>
             {/* importing component for social links here */}
             {/*  */}
-          </HStack>
             <SocialLinks />
-          {/* <Flex alignItems={'center'}> */}
             <LogUserLinks />
-            {/* <Menu>
-              <MenuButton
-                as={Button}
-                rounded={'full'}
-                variant={'link'}
-                cursor={'pointer'}
-                minW={0}>
-                <Avatar
-                  size={'sm'}
-                  src={
-                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                  }
-                />
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList>
-            </Menu> */}
-          {/* </Flex> */}
         </Flex>
         
 
@@ -121,14 +102,16 @@ export default function Navbar() {
           <DrawerCloseButton />
             <DrawerHeader borderBottomWidth='1px'>
               <HStack alignItems={'center'} >
-              <Box w="6rem"><Image src="https://www.kindmeal.my/images/logo-kindmeal.png"  alt="kinmealLogo" /></Box>
+              <Box w="6rem">
+                <NavLink to="/" ><Image src="https://www.kindmeal.my/images/logo-kindmeal.png"  alt="kinmealLogo" />
+                </NavLink>
+                </Box>
             <LogUserLinks />
               </HStack>
               </DrawerHeader>
             <DrawerBody h="10rem">
               <VStack  align={'flex-start'}>
             {links.map((item) => (
-        // activeStyle, or activeClass
         <HStack
           key={item.title}
         >
@@ -157,4 +140,3 @@ export default function Navbar() {
 }
 
 
-//'Meal Deals','KindMoments','Hot Picks','Recipes','Directory','Articles','Help'       
