@@ -12,9 +12,9 @@ import FoodLoverForm from '../Components/FoodLoverForm';
 function ShopOwner() {
   return (
     
-    <HStack justifyContent="space-between" p={2}>
+    <HStack justifyContent="space-evenly">
       Sign up form for shop Owner
-      <Box ml={15}>
+      <Box padding={15}>
         <VStack>
         <Image src="https://www.kindmeal.my/images/join_normal.png" alt="lover" />
         <Text>Food Lover Sign Up</Text>
@@ -25,12 +25,14 @@ function ShopOwner() {
       </VStack>
       <VStack>
         <Heading>Why KindMeal?</Heading>
-        <UnorderedList margin='20px 0 20px 50px ' >
+        <UnorderedList textAlign='left' margin='20px 0 20px 150px' border="1px solid red" >
                       <ListItem>Exclusive meat-free deals</ListItem>
                       <ListItem>Share yummy food moments</ListItem>
-                      <ListItem>Offer coupons & deals to attract new customers</ListItem>
-                      <ListItem>Showcase your delicious meat-free meals</ListItem>
-                      <ListItem>Interact with our community of food lovers</ListItem>
+                      <ListItem>Meet friendly food lovers</ListItem>
+                      <ListItem>Discover cool restaurants</ListItem>
+                      <ListItem>Email updates on tasty deals</ListItem>
+                      <ListItem>Instant coupons & dining</ListItem>
+                      <ListItem>No upfront payment, booking or printing</ListItem>
                   </UnorderedList>
       </VStack>
       </Box>
@@ -39,14 +41,12 @@ function ShopOwner() {
               <Heading fontSize='2vw' fontWeight='500' >Restaurant / Shop Owner? Sign Up Now. </Heading>
               <Text color='blackAlpha.900' fontWeight='500' >Improve your business, build brand loyalty, and save precious animal lives! Join KindMeal now to enjoy the following features:</Text>
               <Box>
-                  <UnorderedList align="" >
+                  <UnorderedList margin='20px 0 20px 50px' >
                       <ListItem>Effectively reach over 200,000 consumers</ListItem>
                       <ListItem>Feature your shop across premium partner platforms & media channels</ListItem>
-                      <ListItem>Meet friendly food lovers</ListItem>
-                      <ListItem>Discover cool restaurants</ListItem>
-                      <ListItem>Email updates on tasty deals</ListItem>
-                      <ListItem>Instant coupons & dining</ListItem>
-                      <ListItem>No upfront payment, booking or printing</ListItem>
+                      <ListItem>Offer coupons & deals to attract new customers</ListItem>
+                      <ListItem>Showcase your delicious meat-free meals</ListItem>
+                      <ListItem>Interact with our community of food lovers</ListItem>
                   </UnorderedList>
               </Box>
               <Text color='blackAlpha.900' fontWeight='500' >To support our welfare causes, we offer simple, affordable Premium Plans on a monthly subscription basis, starting from RM 99 only. No deal commissions, no hidden fees. Premium Plan details are available upon signing up.</Text>
