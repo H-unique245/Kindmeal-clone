@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box,  Heading, Text, ListItem,  UnorderedList,
   Image,
   VStack,
@@ -9,6 +9,10 @@ import { Link } from 'react-router-dom';
 import FoodLoverForm from '../Components/FoodLoverForm';
 
 function FoodLover() {
+  useEffect(()=>{
+ document.title='Sign Up For Delicious Discounted Meat-Free Meals | KindMeal.my'
+  },[])
+  // Sign Up For Delicious Discounted Meat-Free Meals | KindMeal.my ** document title
   return (
     <HStack justifyContent="space-evenly">
       Signup form for FoodLover
