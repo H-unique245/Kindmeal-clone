@@ -12,6 +12,7 @@ import {
   DrawerCloseButton,
   Image,
   VStack,
+  Button,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import SocialLinks from './SocialLinks';
@@ -71,7 +72,7 @@ const links = [
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const {user}=useContext(AppContext);
+  const {user,handleLogout}=useContext(AppContext);
 
   return (
     <>
@@ -95,8 +96,10 @@ export default function Navbar() {
             {/*  */}
             <SocialLinks />
             {user.isAuth?
+            <>
              <Box>{user.userName}</Box>
-             :  
+             <Button onClick={handleLogout} >Logout</Button>
+             </>:  
             <LogUserLinks />
           }
         </Flex>
@@ -136,6 +139,7 @@ export default function Navbar() {
         </Drawer>
         ) : null}
       </Box>
+      
       <NavList />
       <Box
         >

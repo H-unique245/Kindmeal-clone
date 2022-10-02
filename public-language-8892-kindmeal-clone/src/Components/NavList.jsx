@@ -119,7 +119,7 @@ export default function NavList() {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
+          <Box pb={4} display={{ base:"none", sm: 'none' }}>
             <Stack as={'nav'} spacing={4}>
             {links.map((item) => (
         // activeStyle, or activeClass
