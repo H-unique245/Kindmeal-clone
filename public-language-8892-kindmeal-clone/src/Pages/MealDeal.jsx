@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import {  useSearchParams } from 'react-router-dom';
 import Pagination from "../Components/Pagination";
 import { TestimonialContent, TestimonialText } from '../Components/TestiNomial';
-import getMealData from '../DataAPI/api';
+import {getMealData} from '../DataAPI/api';
 function MealDeal(){
     const [searchParams,setSearchParams] = useSearchParams();
     const[page,setPage] = useState((+(searchParams.get("page")))||1);
@@ -14,7 +14,12 @@ function MealDeal(){
     // const {state,dispatch , userData , handleChange , handleSubmit } = useContext(AppContext);
     // console.log('state:', state)
     // console.log('userData:', userData)
+
+    useEffect(() => {
+      document.title = `Featured Meat-Free Deals & Vegetarian Food In Malaysia | KindMeal.my`;
+    }, []);
 useEffect(()=>{
+
     handleGetRestaurantsData(page)
 },[page])
 useEffect(() => {
