@@ -22,6 +22,8 @@ import {BiHomeCircle,BiFoodMenu} from "react-icons/bi"
 import {GiMeal,GiHotMeal,GiArtilleryShell} from "react-icons/gi";
 import {MdOutlineAddReaction,MdLiveHelp} from "react-icons/md"
 import {VscFileSymlinkDirectory} from "react-icons/vsc"
+import { useContext } from 'react';
+import { AppContext } from '../Context/AppContext';
 
 
 const links = [
@@ -69,6 +71,7 @@ const links = [
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {user}=useContext(AppContext);
 
   return (
     <>
@@ -91,7 +94,11 @@ export default function Navbar() {
             {/* importing component for social links here */}
             {/*  */}
             <SocialLinks />
+            {user.isAuth?
+             <Box>{user.userName}</Box>
+             :  
             <LogUserLinks />
+          }
         </Flex>
         
 

@@ -18,27 +18,48 @@ import {
     Link,
     Spacer,
   } from "@chakra-ui/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
   import {RiFacebookCircleLine} from "react-icons/ri"
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../Context/AppContext";
 import { SignUpModal } from "./SignUpModal";
   
   export function LoginModal({ isModalVisible, setIsModalVisible }) {
     // const { isOpen, onOpen, onClose } = useDisclosure();
+    const navigate= useNavigate();
+    const{handleLogin} =useContext(AppContext)
     const [logUser,setLogUser] = useState({email:"", password:""})
   const [isSignModalVisible, setIsSignModalVisible] = useState(false);
+  
+  const User_Data= JSON.parse(localStorage.getItem("USER"));
 
+  console.log(User_Data)
   const handleChange=(e)=>{
-    const {name,value}= e.target;
+    const {name,value}= e.target; 
 
     setLogUser({...logUser, [name]:value})
   }
+  const onClose = () => {
+    setIsModalVisible(false);
+  };
+  
+    const handleSubmit=()=>{
+      console.log(logUser);
+      if(logUser.email!=="" && logUser.password!== ""){
+        if(logUser.email===User_Data.email && logUser.password===User_Data.password){
 
-  const handleSubmit=()=>{
-    console.log(logUser)
-  }
-    const onClose = () => {
-      setIsModalVisible(false);
-    };
+          handleLogin(User_Data.userName);
+          onClose();
+          navigate("/")
+        }
+        else{
+          alert("Please SignUp before login")
+        }
+      }
+      else{
+        alert("Email or Password Should not be empty")
+      }
+    }
 
 
     const SignModalClick=()=>{
