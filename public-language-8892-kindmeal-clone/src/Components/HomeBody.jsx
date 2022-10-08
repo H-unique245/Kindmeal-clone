@@ -59,8 +59,7 @@ export default function HomeBody(){
             <Center>
                 <Image   mt='10px' mb='40px'  src='https://www.kindmeal.my/images/media-feature2.png'  />
             </Center>
-                
-            
+            <Box align="center"><Image src="https://www.kindmeal.my/images/banner_whykindmeal.png" alt="home_footer_image" /></Box>
         </div>
     )
 }

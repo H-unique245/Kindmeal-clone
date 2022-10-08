@@ -55,9 +55,9 @@ const handleOnePageChange=(p)=>{
     return (
       <>
       <TestimonialContent>
-        <HStack ml={0} alignSelf="left" border="1px solid">
-          <Heading as={'h2'} fontSize={'25px'} pr={2} borderRight="2.5px solid grey" >Meat-Free Deals</Heading>
-          <Text>Restaurants In Malaysia</Text>
+        <HStack ml={0} alignSelf="left">
+          <Heading as={'h2'} fontSize={'25px'} pr={2} borderRight="2.5px solid grey" >KindMoments </Heading>
+          <Text>Saving Lives with Yummy Photos</Text>
         </HStack>
         
         < TestimonialText > 

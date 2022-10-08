@@ -14,3 +14,7 @@ Kindemeal is a Malaysian product base platform, Where we can check the food prod
 # Duration Of project:
 - 5 Days
 
+# Features:
+- Login , Sign Up using react and loacal storage.
+- Meals Page (fetching data with API call).
+- Moments (fetching data with API call).

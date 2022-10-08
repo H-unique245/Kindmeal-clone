@@ -1,0 +1,52 @@
+.active {
+  width:max-content;
+  color: red;
+  font-size:18px;
+  font-weight:600;
+  line-height:35px;
+  background-color: lightgreen;
+  text-decoration: none;
+  padding:0.5rem;
+  }
+  
+  .default {
+    width:max-content;
+    color: White;
+   font-size:18px;
+   font-weight:600;
+   line-height:35px;
+   text-decoration: none;
+   padding:0.5rem
+  }
+  
+@media screen and (max-width:776px) and (min-width:480px){
+  .active {
+    width:max-content;
+    color: red;
+    font-size:14px;
+    font-weight:400;
+    line-height:25px;
+    background-color: lightgreen;
+    text-decoration: none;
+    padding:0.5rem;
+    }
+    
+    .default {
+      width:max-content;
+      color: White;
+     font-size:14px;
+     font-weight:400;
+     line-height:25px;
+     text-decoration: none;
+     padding:0.5rem
+    }
+}
+   /* const activeStyle = {
+   color: White;
+   font-size:18px;
+   font-weight:400;
+   line-height:40px;
+   background-color: green;
+   text-decoration: none;
+   padding:0.5rem;
+ }; */
