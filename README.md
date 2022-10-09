@@ -1,4 +1,5 @@
-### KindMeal Clone 
+### KindMeal Clone | [See Live](https://timely-crepe-c8bf70.netlify.app/ "kindmeal-clone")
+
 Construct Week project of cloning Kindmeal.my web.
 This is individual project to apply the learnings of React Basics. 
 Kindemeal is a Malaysian product base platform, Where we can check the food products and restaurants for the same. 
