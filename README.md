@@ -1,4 +1,5 @@
-### KindMeal Clone | [See Live](https://timely-crepe-c8bf70.netlify.app/ "kindmeal-clone")
+### KindMeal Clone | <a href="https://timely-crepe-c8bf70.netlify.app/" target="_blank">See Live</a>
+
 
 Construct Week project of cloning Kindmeal.my web.
 This is individual project to apply the learnings of React Basics. 
