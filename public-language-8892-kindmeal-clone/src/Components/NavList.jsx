@@ -50,16 +50,15 @@ export default function NavList() {
   return (
     <>
       <Box bgColor={{base:'white',sm:'green.400',md:'green.400'}} >
-        <Flex h={{sm:8,md:12}} alignItems={'center'} justifyContent={'space-between'}
-        display={{ base: 'none',sm: 'flex'}}
+        <Flex h={{sm:8,md:12}} mb={2} alignItems={'center'} justifyContent={'space-between'}
+        display={{ base: 'none',sm: 'none',md: 'flex'}}
         >
             <HStack
-              maxW={{sm:'l',md:'4xl',lg:'7xl'}}
-              // px={15}
+              maxW={{sm:'l',md:'5xl',lg:'7xl'}}
               justifyContent={'space-evenly'}
               alignItems={'center'}
-              ml={{sm:10,md:20,lg:40}}
-              spacing={{sm:3,md:8,lg:'3.5rem'}}
+              ml={{sm:10,md:10,lg:40}}
+              spacing={{sm:3,md:3,lg:'3.5rem'}}
               display={{ base: 'none',sm: 'flex', md: 'flex' }}>
               {links.map((item) => (
         // activeStyle, or activeClass
