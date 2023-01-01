@@ -33,9 +33,9 @@ function handleGetRestaurantsData(page){
         res=>{
            let product =  res.data
            let a = JSON.parse( product.slice(1,product.length-2));
-           console.log(a.data);
+           console.log("check",a.data.items);
            setRestaurants(a.data.items)
-           setTotalPage(10)
+           setTotalPage(5)
            
         }
     )
@@ -69,11 +69,11 @@ const handleOnePageChange=(p)=>{
         <Box bgColor="gray.100" >
 
             <Pagination  totalPages={totalPage} currentPage={page} handlePageChange={handlePageChange} handleOnePageChange={handleOnePageChange} />
-            <SimpleGrid columns={[1,3]} w='80%' margin='50px  auto' spacing={10} position="relative" >
+            <SimpleGrid columns={[1,2,3]} w='80%' margin='50px  auto' spacing={10} position="relative" >
                 {
                     restaurants.map(item =>(
                        
-                        <Box key={item.dealid}  rounded={20} boxShadow='rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'  h='26rem' position='relative' bg='white' >
+                        <Box key={item.momentid}  rounded={20} boxShadow='rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'  h='26rem' position='relative' bg='white' >
                             <Stack direction={'row'} justifyContent='space-between' p={3}>
                                 <HStack>
                             <Box><Image src={item.mphoto} w={45} rounded='full' alt={item.mname}/></Box>
